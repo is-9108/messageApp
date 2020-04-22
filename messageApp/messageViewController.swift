@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class messageViewController: UIViewController {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser == nil{
+            let first = self.storyboard?.instantiateViewController(withIdentifier: "first")
+            self.present(first!,animated: true,completion: nil)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
 

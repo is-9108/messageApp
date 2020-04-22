@@ -1,5 +1,5 @@
 //
-//  loginViewController.swift
+//  tabBarViewController.swift
 //  messageApp
 //
 //  Created by Shota Ishii on 2020/04/22.
@@ -7,8 +7,18 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
-class loginViewController: UIViewController {
+class tabBarViewController: UITabBarController {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser == nil{
+            let first = self.storyboard?.instantiateViewController(withIdentifier: "first")
+            self.present(first!,animated: true,completion: nil)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

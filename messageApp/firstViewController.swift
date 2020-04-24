@@ -1,10 +1,3 @@
-//
-//  firstViewController.swift
-//  messageApp
-//
-//  Created by Shota Ishii on 2020/04/22.
-//  Copyright © 2020 is. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -38,9 +31,9 @@ class firstViewController: UIViewController,UITextFieldDelegate {
     }
 
     @IBAction func signIn(_ sender: Any) {
-        let mail:String = mailAdress.text!
-        let pass:String = password.text!
-        let name:String = userName.text!
+        let mail:String! = mailAdress.text!
+        let pass:String! = password.text!
+        let name:String! = userName.text!
         if mailAdress.text == ""{
             print("メールアドレスを入力して下さい")
         }else if password.text == ""{
@@ -65,7 +58,8 @@ class firstViewController: UIViewController,UITextFieldDelegate {
                         print("DEBUG_PRINT" + error.localizedDescription)
                         return
                     }
-                    print("DEBUG_PRINT:ユーザー名を\(user.displayName)に設定成功")
+
+                    print("DEBUG_PRINT:ユーザー名を\(user.displayName!)に設定成功")
                     let message = self.storyboard?.instantiateViewController(withIdentifier: "message") as! messageViewController
                     self.present(message,animated: true,completion: nil)
                 }
@@ -76,5 +70,4 @@ class firstViewController: UIViewController,UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-
 }

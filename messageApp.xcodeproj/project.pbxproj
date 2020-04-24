@@ -8,13 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5A221B9BCE666859644D72F8 /* Pods_messageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3C5C44F0790B868490A0D0 /* Pods_messageApp.framework */; };
-		E67E4CAE24503E800021ED7D /* friendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E4CAD24503E7F0021ED7D /* friendViewController.swift */; };
-		E67E4CB024503E8C0021ED7D /* talkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E4CAF24503E8C0021ED7D /* talkViewController.swift */; };
 		E67E4CB224503E9A0021ED7D /* messageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E4CB124503E9A0021ED7D /* messageViewController.swift */; };
-		E67E4CB4245042510021ED7D /* editViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E4CB3245042510021ED7D /* editViewController.swift */; };
 		E67E4CB62450448E0021ED7D /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E4CB52450448E0021ED7D /* firstViewController.swift */; };
 		E67E4CB8245045ED0021ED7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E67E4CB7245045ED0021ED7D /* GoogleService-Info.plist */; };
-		E67E4CBA245074A30021ED7D /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E4CB9245074A30021ED7D /* tabBarViewController.swift */; };
 		E68CC4A024503B4900F191C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68CC49F24503B4900F191C3 /* AppDelegate.swift */; };
 		E68CC4A224503B4900F191C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68CC4A124503B4900F191C3 /* SceneDelegate.swift */; };
 		E68CC4A724503B4900F191C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E68CC4A524503B4900F191C3 /* Main.storyboard */; };
@@ -26,13 +22,9 @@
 		3B9D4D58B32C85B6B3D46280 /* Pods-messageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-messageApp.release.xcconfig"; path = "Target Support Files/Pods-messageApp/Pods-messageApp.release.xcconfig"; sourceTree = "<group>"; };
 		8C5E93FFA7EEBEC92882B126 /* Pods-messageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-messageApp.debug.xcconfig"; path = "Target Support Files/Pods-messageApp/Pods-messageApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BD3C5C44F0790B868490A0D0 /* Pods_messageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_messageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E67E4CAD24503E7F0021ED7D /* friendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendViewController.swift; sourceTree = "<group>"; };
-		E67E4CAF24503E8C0021ED7D /* talkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talkViewController.swift; sourceTree = "<group>"; };
 		E67E4CB124503E9A0021ED7D /* messageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageViewController.swift; sourceTree = "<group>"; };
-		E67E4CB3245042510021ED7D /* editViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editViewController.swift; sourceTree = "<group>"; };
 		E67E4CB52450448E0021ED7D /* firstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstViewController.swift; sourceTree = "<group>"; };
 		E67E4CB7245045ED0021ED7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E67E4CB9245074A30021ED7D /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
 		E68CC49C24503B4900F191C3 /* messageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = messageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68CC49F24503B4900F191C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E68CC4A124503B4900F191C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,12 +87,8 @@
 				E68CC49F24503B4900F191C3 /* AppDelegate.swift */,
 				E68CC4A124503B4900F191C3 /* SceneDelegate.swift */,
 				E68CC4A524503B4900F191C3 /* Main.storyboard */,
-				E67E4CB9245074A30021ED7D /* tabBarViewController.swift */,
 				E67E4CB52450448E0021ED7D /* firstViewController.swift */,
-				E67E4CB3245042510021ED7D /* editViewController.swift */,
 				E68CC4A824503B4A00F191C3 /* Assets.xcassets */,
-				E67E4CAD24503E7F0021ED7D /* friendViewController.swift */,
-				E67E4CAF24503E8C0021ED7D /* talkViewController.swift */,
 				E67E4CB124503E9A0021ED7D /* messageViewController.swift */,
 				E68CC4AA24503B4A00F191C3 /* LaunchScreen.storyboard */,
 				E68CC4AD24503B4A00F191C3 /* Info.plist */,
@@ -225,13 +213,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E67E4CAE24503E800021ED7D /* friendViewController.swift in Sources */,
-				E67E4CB4245042510021ED7D /* editViewController.swift in Sources */,
 				E68CC4A024503B4900F191C3 /* AppDelegate.swift in Sources */,
 				E67E4CB62450448E0021ED7D /* firstViewController.swift in Sources */,
-				E67E4CB024503E8C0021ED7D /* talkViewController.swift in Sources */,
 				E68CC4A224503B4900F191C3 /* SceneDelegate.swift in Sources */,
-				E67E4CBA245074A30021ED7D /* tabBarViewController.swift in Sources */,
 				E67E4CB224503E9A0021ED7D /* messageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +364,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 662NXA3TX5;
 				INFOPLIST_FILE = messageApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -399,6 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 662NXA3TX5;
 				INFOPLIST_FILE = messageApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

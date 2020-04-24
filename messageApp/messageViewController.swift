@@ -1,20 +1,29 @@
-//
-//  messageViewController.swift
-//  messageApp
-//
-//  Created by Shota Ishii on 2020/04/22.
-//  Copyright © 2020 is. All rights reserved.
-//
 
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
-class messageViewController: UIViewController {
+
+
+class messageViewController: UIViewController,UITextFieldDelegate {
     
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var messageTextfield: UITextField!
+    
+    @IBOutlet weak var talkTextView: UITextView!
+    
+    var ref: DatabaseReference!
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Auth.auth().currentUser == nil{
+        if Auth.auth().currentUser != nil {
+            print("userName\((Auth.auth().currentUser)!)")
+            print("login")
+                  userName.text = "name:\((Auth.auth().currentUser?.displayName)!)"
+        } else {
+            print("no")
             let first = self.storyboard?.instantiateViewController(withIdentifier: "first")
             self.present(first!,animated: true,completion: nil)
         }
@@ -22,19 +31,38 @@ class messageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        messageTextfield.delegate = self
+        talkTextView.isEditable = false
+        talkTextView.isSelectable = false
 
+        ref = Database.database().reference().child("chat")
+        ref.observe(.childAdded, with: { (snapshot) -> Void in
+            if let data = snapshot.value as? Dictionary<String, AnyObject>{
+                if let name = data["name"], let comment = data["comment"] {
+                    self.talkTextView.text += "\(name):\(comment)\n"
+                return
+                }
+            }
+        })
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        messageTextfield.resignFirstResponder()
+        return true
     }
-    */
+    
 
+    @IBAction func send(_ sender: Any) {
+        ref = Database.database().reference()
+        let data = [
+            "name" : Auth.auth().currentUser?.displayName!,
+            "comment" : messageTextfield.text!
+        ]
+        ref.child("chat").childByAutoId().setValue(data)
+        messageTextfield.text = ""
+    }
+    
+    
 }

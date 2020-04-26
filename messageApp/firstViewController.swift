@@ -60,8 +60,8 @@ class firstViewController: UIViewController,UITextFieldDelegate {
                     }
 
                     print("DEBUG_PRINT:ユーザー名を\(user.displayName!)に設定成功")
-                    let message = self.storyboard?.instantiateViewController(withIdentifier: "message") as! messageViewController
-                    self.present(message,animated: true,completion: nil)
+                    let Chat = self.storyboard?.instantiateViewController(withIdentifier: "Chat") as! ChatViewController
+                    self.present(Chat,animated: true,completion: nil)
                 }
             }
         }

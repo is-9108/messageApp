@@ -15,22 +15,9 @@ import InputBarAccessoryView
 
 class ChatViewController: MessagesViewController {
     
-    let user1 = MockUser(senderId: "test1", displayName: "test1")
-    let user2 = MockUser(senderId: "test2", displayName: "test2")
-    
     var messages: [MockMessage] = []
     
     var ref: DatabaseReference!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            print("userName\((Auth.auth().currentUser)!)")
-        } else {
-            let first = self.storyboard?.instantiateViewController(withIdentifier: "first")
-            self.present(first!,animated: true,completion: nil)
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +53,7 @@ class ChatViewController: MessagesViewController {
 
 }
 
-extension ChatViewController: InputBarAccessoryViewDelegate {
+    extension ChatViewController: InputBarAccessoryViewDelegate {
 
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         

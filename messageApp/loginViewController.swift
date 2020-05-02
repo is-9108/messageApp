@@ -17,17 +17,18 @@ class loginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var userNameTextField: UITextField!
     
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            print("userName\((Auth.auth().currentUser)!)")
-        } else {
-            let first = self.storyboard?.instantiateViewController(withIdentifier: "first")
-            self.present(first!,animated: true,completion: nil)
+        print("didapper")
+        if Auth.auth().currentUser == nil {
+            print("OK")
+            let firstViewController = self.storyboard?.instantiateViewController(withIdentifier: "first")
+            present(firstViewController!,animated: true,completion: nil)
+        }else{
+            print(Auth.auth().currentUser?.displayName)
         }
     }
     
@@ -36,7 +37,6 @@ class loginViewController: UIViewController {
         
         EmailAdressTextField.delegate = self
         passwordTextField.delegate = self
-        userNameTextField.delegate = self
         
         loginButton.isEnabled = false
         loginButton.backgroundColor = UIColor.orange.withAlphaComponent(0.5)
@@ -115,9 +115,8 @@ extension loginViewController: UITextFieldDelegate{
     func textFieldDidChangeSelection(_ textField: UITextField) {
         let emailBool = EmailAdressTextField.text?.isEmpty ?? true
         let passwordBool = passwordTextField.text?.isEmpty ?? true
-        let userNameBool = userNameTextField.text?.isEmpty ?? true
         
-        if emailBool || passwordBool || userNameBool {
+        if emailBool || passwordBool {
             loginButton.isEnabled = false
             loginButton.backgroundColor = UIColor.orange.withAlphaComponent(0.5)
         }else{

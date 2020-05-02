@@ -25,6 +25,8 @@ class searchViewController: UIViewController {
     
     let db = Firestore.firestore()
     
+    var us:[String : Any] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +39,9 @@ class searchViewController: UIViewController {
                 print("error: \(err)")
             }else{
                 for document in QuerySnapshot!.documents{
-                    print("\(document.documentID) => \(document.data())")
+//                    print("\(document.documentID) => \(document.data())")
+                    self.us = document.data()
+                    print(self.us)
                 }
             }
         }

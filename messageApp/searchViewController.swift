@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class searchViewController: UIViewController {
 
@@ -22,12 +23,24 @@ class searchViewController: UIViewController {
     
     var user:[String] = []
     
+    let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        
+        db.collection("users").getDocuments(){ (QuerySnapshot, err) in
+            if let err = err{
+                print("error: \(err)")
+            }else{
+                for document in QuerySnapshot!.documents{
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
 
     }
 

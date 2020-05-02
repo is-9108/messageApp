@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="941" y="32"/>
         </scene>
-        <!--Serch View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="46f-98-VVa">
             <objects>
-                <viewController storyboardIdentifier="Serch" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hLQ-IQ-upF" customClass="serchViewController" customModule="messageApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Saerch" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hLQ-IQ-upF" customClass="searchViewController" customModule="messageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YKD-pk-a9b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,8 +107,8 @@
                         <viewLayoutGuide key="safeArea" id="27M-mL-JUz"/>
                     </view>
                     <connections>
-                        <outlet property="serchBar" destination="Emo-4j-JJV" id="DfJ-Y7-Fjy"/>
-                        <outlet property="tableView" destination="hrr-tX-mPK" id="QFr-ni-rVt"/>
+                        <outlet property="searchBar" destination="Emo-4j-JJV" id="F8o-38-km1"/>
+                        <outlet property="tableView" destination="hrr-tX-mPK" id="vEy-Z9-2H7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKO-BO-C3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

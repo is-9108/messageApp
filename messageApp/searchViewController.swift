@@ -15,17 +15,13 @@ class searchViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let users = [
-        "aaa",
-        "bbb",
-        "ccc"
-    ]
-    
     var user:[String] = []
     
     let db = Firestore.firestore()
     
-    var us:[String : Any] = [:]
+    var usersData:[String : Any] = [:]
+    
+    var usersName:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +35,11 @@ class searchViewController: UIViewController {
                 print("error: \(err)")
             }else{
                 for document in QuerySnapshot!.documents{
-//                    print("\(document.documentID) => \(document.data())")
-                    self.us = document.data()
-                    print(self.us)
-                }
+                    self.usersData = document.data()
+                    let userName = self.usersData["name"] as! String
+                    self.usersName.append(userName)
+                 }
+                print(self.usersName)
             }
         }
 
@@ -74,11 +71,11 @@ extension searchViewController:UISearchBarDelegate{
     }
     func getUser(userName:String){
         if userName != ""{
-            user = users.filter{users in
+            user = usersName.filter{users in
                 return users.contains(userName)
             } as Array
         }else{
-            user = users
+            user = usersName
         }
         tableView.reloadData()
     }

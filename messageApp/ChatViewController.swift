@@ -18,6 +18,7 @@ class ChatViewController: MessagesViewController {
     var messages: [MockMessage] = []
     
     var ref: DatabaseReference!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class ChatViewController: MessagesViewController {
        
         
         creatFirebase()
+        
     }
     
     func creatFirebase(){

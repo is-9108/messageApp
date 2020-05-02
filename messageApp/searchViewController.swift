@@ -48,7 +48,11 @@ class searchViewController: UIViewController {
 }
 
 extension searchViewController:UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chat = self.storyboard?.instantiateViewController(withIdentifier: "Chat")
+        print((tableView.cellForRow(at: indexPath)?.textLabel?.text)!)
+        self.present(chat!,animated: true,completion: nil)
+    }
 }
 
 extension searchViewController:UITableViewDataSource{

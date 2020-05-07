@@ -36,6 +36,10 @@ class ChatViewController: MessagesViewController {
         
     }
     
+    func creatNativeBar(){
+        
+    }
+    
     func creatFirebase(){
         self.ref.observe(DataEventType.childAdded, with: { (snapshot) -> Void in
             let postDict = snapshot.value as? [String : AnyObject] ?? [:]
